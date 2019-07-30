@@ -5,7 +5,8 @@
     </strong></span>
 </p> -->
 
-<!-- <p *ngFor="let task of tasks; let i=index; let isOdd = odd; let isFirst = first">
-  <app-task [name]="task + 'kutya'" [ngClass]=" {'boldaf': isOdd, 'pinkaf' : isFirst, 'blueaf' : startsWithT(task)}">
+<p *ngFor="let task of tasks; let i=index; let isOdd = odd; let isFirst = first">
+  <app-task (taskClick)="onTaskClicked($event)" [name]="task + 'kutya'"
+    [ngClass]=" {'boldaf': isOdd, 'pinkaf' : isFirst, 'blueaf' : startsWithT(task)}">
   </app-task>
-</p> -->
+</p>

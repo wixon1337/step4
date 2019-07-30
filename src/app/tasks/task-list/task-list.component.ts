@@ -16,6 +16,10 @@ export class TaskListComponent implements OnInit {
     }
   }
 
+  onTaskClicked(name: string) {
+    alert(name);
+  }
+
   constructor() { }
 
   ngOnInit() {
