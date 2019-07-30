@@ -9,7 +9,7 @@ import { Task } from '../task-list/task-list.component';
 export class TaskComponent implements OnInit {
   @Output() taskClick: EventEmitter<String> = new EventEmitter<String>();
 
-  @Input("name") task: Task;
+  @Input("task") task: Task;
 
   constructor() { }
 
