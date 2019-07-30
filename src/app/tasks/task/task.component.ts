@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Task } from '../task-list/task-list.component';
 
 @Component({
   selector: 'app-task',
@@ -8,8 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TaskComponent implements OnInit {
   @Output() taskClick: EventEmitter<String> = new EventEmitter<String>();
 
-  @Input()
-  name = "";
+  @Input("name") task: Task;
 
   constructor() { }
 
@@ -17,7 +17,7 @@ export class TaskComponent implements OnInit {
   }
 
   onClick() {
-    this.taskClick.next(this.name);
+    this.taskClick.next(this.task.name);
   }
 
 }

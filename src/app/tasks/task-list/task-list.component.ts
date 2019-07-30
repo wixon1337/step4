@@ -1,12 +1,29 @@
 import { Component, OnInit } from '@angular/core';
 
+export class Task {
+  name: string;
+  owner: string;
+
+  constructor(name, owner) {
+    this.name = name;
+    this.owner = owner;
+  }
+}
+
 @Component({
   selector: 'app-task-list',
   templateUrl: './task-list.component.html',
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  tasks = ["ajgisdjg", "aosdgjsog", "kosdgkogsd", "tégla", "templom"];
+  public tasks: Array<Task> = [
+    new Task("asdasd", "há én"),
+    new Task("asd2", "há te"),
+    new Task("asd3", "há ő"),
+    new Task("asd4", "há én"),
+    new Task("asd5", "há én")
+  ];
+
 
   startsWithT(string) {
     if (string.charAt(0) === 't') {
