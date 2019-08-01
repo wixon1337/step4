@@ -8,6 +8,7 @@ import { TaskListComponent } from './tasks/components/task-list/task-list.compon
 import { TaskComponent } from './tasks/components/task/task.component';
 import { SzinesStringComponent } from './szines-string/szines-string.component';
 import { TaskService } from './tasks/services/task.service';
+import { LogServiceService } from './tasks/services/log-service.service';
 import { AddTaskComponent } from './tasks/components/add-task/add-task.component';
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AddTaskComponent } from './tasks/components/add-task/add-task.component
     FormsModule
   ],
   providers: [
-    TaskService
+    TaskService,
+    LogServiceService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from '../task-list/task-list.component';
+import { LogServiceService } from '../../services/log-service.service';
 
 @Component({
   selector: 'app-task',
@@ -12,9 +13,11 @@ export class TaskComponent implements OnInit {
   @Output() hundredStatus: EventEmitter<Number> = new EventEmitter<Number>();
   statusz: number = 0;
 
-  constructor() { }
+  constructor(private logService: LogServiceService) {
+  }
 
   ngOnInit() {
+    this.logService.log("Szia");
   }
 
   onClick() {
