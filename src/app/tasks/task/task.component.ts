@@ -7,9 +7,10 @@ import { Task } from '../task-list/task-list.component';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
-  @Output() taskClick: EventEmitter<String> = new EventEmitter<String>();
-
   @Input("task") task: Task;
+  @Output() taskClick: EventEmitter<String> = new EventEmitter<String>();
+  @Output() hundredStatus: EventEmitter<Number> = new EventEmitter<Number>();
+  statusz: number = 0;
 
   constructor() { }
 
@@ -18,6 +19,14 @@ export class TaskComponent implements OnInit {
 
   onClick() {
     this.taskClick.next(this.task.name);
+    this.statusz += 10;
+    if (this.statusz === 100) {
+      console.log("100!!");
+      this.hundredStatus.next(this.statusz);
+
+    }
+    console.log(this.statusz);
   }
+
 
 }

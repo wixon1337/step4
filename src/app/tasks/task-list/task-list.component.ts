@@ -25,6 +25,11 @@ export class TaskListComponent implements OnInit {
   ];
 
 
+  constructor() { }
+
+  ngOnInit() {
+  }
+
   startsWithT(string) {
     if (string.charAt(0) === 't') {
       return true;
@@ -34,12 +39,9 @@ export class TaskListComponent implements OnInit {
   }
 
   onTaskClicked(name: string) {
-    alert(name);
+    console.log(name);
   }
-
-  constructor() { }
-
-  ngOnInit() {
+  onHundredStatus(statusz: number) {
+    alert("Nagyon sokszor nyomtad bástya (" + statusz + ")");
   }
-
 }
