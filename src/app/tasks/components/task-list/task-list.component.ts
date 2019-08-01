@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TaskService} from '../../services/task.service';
 
 export class Task {
   name: string;
@@ -16,14 +17,14 @@ export class Task {
   styleUrls: ['./task-list.component.css']
 })
 export class TaskListComponent implements OnInit {
-  public tasks: Array<Task> = [
-    new Task("asdasd", "há én"),
-    new Task("asd2", "há te"),
-    new Task("asd3", "há ő"),
-    new Task("asd4", "há én"),
-    new Task("asd5", "há én")
-  ];
 
+  public tasks: Array<Task>;
+
+  constructor(private taskService: TaskService) {}
+
+  ngOnInit() {
+    this.tasks = this.taskService.tasks;
+  }
 
   startsWithT(string) {
     if (string.charAt(0) === 't') {
@@ -37,9 +38,5 @@ export class TaskListComponent implements OnInit {
     alert(name);
   }
 
-  constructor() { }
-
-  ngOnInit() {
-  }
 
 }

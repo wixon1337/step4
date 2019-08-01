@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { TaskListComponent } from './tasks/task-list/task-list.component';
-import { TaskComponent } from './tasks/task/task.component';
+import { TaskListComponent } from './tasks/components/task-list/task-list.component';
+import { TaskComponent } from './tasks/components/task/task.component';
 import { SzinesStringComponent } from './szines-string/szines-string.component';
-
+import { TaskService } from './tasks/services/task.service';
+import { AddTaskComponent } from './tasks/components/add-task/add-task.component';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,16 @@ import { SzinesStringComponent } from './szines-string/szines-string.component';
     HeaderComponent,
     TaskListComponent,
     TaskComponent,
-    SzinesStringComponent
+    SzinesStringComponent,
+    AddTaskComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    TaskService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
